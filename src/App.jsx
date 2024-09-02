@@ -9,11 +9,12 @@ import ApiCallWithBtn from "./Component/ApiCallWithBtn";
 import FormOne from "./Component/FormOne";
 import Exestyle from "./Component/Exestyle";
 
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 function App(){
   return(
 
-<>
+<BrowserRouter>
 
 
     {/* <AddCartComp/> */}
@@ -25,16 +26,39 @@ function App(){
 
 {/* <ListRender/> */}
 
-{/* <CardComp/> */}
+{/* 
 
-{/* <ApiCallWithBtn/> */}
+<ApiCallWithBtn/>
 
 
-{/* <FormOne/> */}
+<FormOne/> */}
 
-<Exestyle/>
 
-    </>
+<Link to="/home">Home</Link>
+
+<Link to="/product">Product</Link>
+<Link to="/about">About</Link>
+
+
+<Routes>
+
+<Route path="/home" element={<CardComp/>}/>
+
+<Route path="/about" element={<FormOne/> }/>
+
+<Route path="/product" element={<ApiCallWithBtn/>}/>
+
+
+
+
+</Routes>
+
+
+
+
+{/* <Exestyle/> */}
+
+    </BrowserRouter>
 
   )
 }
